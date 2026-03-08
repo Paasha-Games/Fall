@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دۆزینەوەی بکوژەکە | یاری لێکۆڵینەوە</title>
+    <style>
+        :root {
+            --blood-red: #8b0000;
+            --dark-bg: #0a0a0a;
+            --text-gray: #cccccc;
+            --accent-gold: #c5a059;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--blood-red);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: var(--blood-red);
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-left: 4px solid var(--blood-red);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: #222;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--blood-red);
+            display: inline-block;
+            padding-bottom: 5px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: var(--blood-red);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff0000;
+            box-shadow: 0 0 15px var(--blood-red);
+        }
+
+        .suspect-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .suspect-list li {
+            background: #111;
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #000;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .evidence-box {
+            border: 2px dashed var(--accent-gold);
+            padding: 20px;
+            text-align: center;
+            background: rgba(197, 160, 89, 0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>کێ بکوژەکەیە؟</h1>
+        <p class="tagline">شارەزاییەکانت بەکاربهێنە بۆ دۆزینەوەی ڕاستی لە پشت پەردەی تاوانەکان</p>
+        <a href="#play" class="btn">دەستپێکردنی یاری</a>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>دەربارەی یارییەکە</h2>
+            <p>بەخێربێیت بۆ جیهانی لێکۆڵینەوە و نهێنییەکان. لێرە تۆ تەنها یاریزان نیت، تۆ لێکۆڵەرێکی لێهاتووی کە دەبێت لە نێوان درۆ و ڕاستییەکاندا، بکوژە ڕاستەقینەکە بدۆزیتەوە پێش ئەوەی جارێکی تر هێرش بکاتەوە.</p>
+        </section>
+
+        <section class="feature-grid">
+            <div class="card">
+                <h3>🔍 لێکۆڵینەوە لە شوێنی تاوان</h3>
+                <p>هەموو وردەکارییەک گرنگە. بەدوای بەڵگە شاراوەکاندا بگەڕێ و سەرەداوەکان کۆبکەرەوە.</p>
+            </div>
+            <div class="card">
+                <h3>🗣️ لێپرسینەوە لە گومانلێکراوان</h3>
+                <p>گوێ لە وتەی شایەتحاڵەکان بگرە. کێ ڕاست دەکات و کێ درۆ؟ هەموویان شتێکیان هەیە بۆ شاردنەوە.</p>
+            </div>
+            <div class="card">
+                <h3>⚖️ بڕیاری کۆتایی</h3>
+                <p>بەڵگەکان ڕیز بکە و بکوژەکە دەستنیشان بکە. ئاگاداربە! بڕیاری هەڵە بێتاوانێک دەخاتە زیندانەوە.</p>
+            </div>
+        </section>
+
+        <section id="play">
+            <div class="evidence-box">
+                <h2>دۆسیەی ژمارە ٠١: مەتەڵی نیوەشەو</h2>
+                <p>بازرگانێکی دەوڵەمەند لە ژوورەکەی خۆیدا بە مردوویی دۆزرایەوە. دەرگاکە لە ناوەوە داخرابوو...</p>
+                
+                <ul class="suspect-list">
+                    <li><strong>خزمەتکارەکە:</strong> "من خەریکی پاککردنەوەی چێشتخانەکە بووم."</li>
+                    <li><strong>براکەی:</strong> "من لە کتێبخانە خەریکی خوێندنەوە بووم و هیچم نەبیستووە."</li>
+                    <li><strong>هاوڕێکەی:</strong> "من تەنها بۆ سەردان هاتبووم و پێش ڕووداوەکە ڕۆیشتم."</li>
+                </ul>
+                
+                <a href="#" class="btn">پشکنینی بەڵگەکان</a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 یاری دۆزینەوەی بکوژ - هەموو مافەکان پارێزراوە</p>
+        <p>دیزاین کراوە بۆ لێکۆڵەرە زیرەکەکان</p>
+    </footer>
+
+</body>
+</html>
