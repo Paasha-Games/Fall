@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Prayer Times</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f4f4f9; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; min-width: 300px; }
+        ul { list-style: none; padding: 0; margin-top: 1rem; }
+        li { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #eee; }
+        li:last-child { border: none; }
+        .loading { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
 
+<div class="card">
+    <h2 id="location">Detecting Location...</h2>
+    <div id="times" class="loading">Please allow location access.</div>
+</div>
+
+<script>
+    function getPrayerTimes(lat, lon) {
+        const url = `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=3`;
+        
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                const timings = data.data.timings;
+                document.getElementById('location').innerText = "Today's Prayer Times";
+                let html = '<ul>';
+                const prayers = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
+                prayers.forEach(p => {
+                    html += `<li><strong>${p}:</strong> <span>${timings[p]}</span></li>`;
+                });
+                html += '</ul>';
+                document.getElementById('times').innerHTML = html;
+                document.getElementById('times').classList.remove('loading');
+            })
+            .catch(() => document.getElementById('times').innerText = "Error loading times.");
+    }
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            pos => getPrayerTimes(pos.coords.latitude, pos.coords.longitude),
+            () => document.getElementById('times').innerText = "Location access denied."
+        );
+    } else {
+        document.getElementById('times').innerText = "Browser doesn't support geolocation.";
+    }
+</script>
+
+</body>
+</html>
